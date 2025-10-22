@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise, babe </title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🎈 Balões - distribuídos uniformemente -->
+  <div class="balloon" style="--color:#1a1a1a; left:5%; --speed:4s; animation-delay:0s;"></div>
+  <div class="balloon" style="--color:rgb(251, 255, 28); left:17%; --speed:7s; animation-delay:0s;"></div>
+  <div class="balloon" style="--color:#ff4444; left:29%; --speed:5s; animation-delay:0s;"></div>
+  <div class="balloon" style="--color:#1e90ff; left:41%; --speed:6s; animation-delay:1s;"></div>
+  <div class="balloon" style="--color:#ff8ac1; left:53%; --speed:5s; animation-delay:0.5s;"></div>
+  <div class="balloon" style="--color:#444444; left:65%; --speed:6s; animation-delay:2s;"></div>
+  <div class="balloon" style="--color:#172ad1; left:77%; --speed:4s; animation-delay:3s;"></div>
+  <div class="balloon" style="--color:#ffb6c1; left:89%; --speed:6s; animation-delay:1.5s;"></div>
+
+  <!-- 🎁 Painel central -->
+  <div class="painel">
+    <h1>Today is your<br><span class="bday">b-day!!</span></h1>
+
+    <div class="image-container">
+      <img src="assets-images-bat-and-cat.jpeg" alt="Batman and Catwoman">
+      <p class="us-text">us🖤</p>
+    </div>
+
+    <h2>A year has passed and I had to do this again</h2>
+
+    <p>Someone called <span class="strikethrough">Victor</span> <b>Batman</b> turns 21 today.</p>
+
+    <p>Happy birthday my love, you are my hero, and I love you so much</p>
+
+    <p>~Your Catwoman 💋</p>
+  </div>
+
+  <!-- 🎊 Script dos confetes - cores Batman & Catwoman -->
+  <script>
+    const confettiCount = 150;
+    const pageColors = [
+      '#000000',            // preto
+      'rgb(251, 255, 28)',  // amarelo
+      '#333333',            // cinza escuro
+      '#666666',            // cinza médio
+      '#172ad1',            // azul
+      '#ff3333',            // vermelho
+      '#ff66cc',            // rosa
+      '#ffb6c1',           // rosa claro
+      '#1e90ff',            // azul claro
+      '#3b3b3b'            // cinza adicional
+    ];
+    
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDuration = 3 + Math.random() * 3 + "s";
+      confetti.style.backgroundColor = pageColors[Math.floor(Math.random() * pageColors.length)];
+      document.body.appendChild(confetti);
+    }
+  </script>
+  <div class="audio-container">
+    <audio controls autoplay loop>
+      <source src="bleeding-heart-angra.mp3" type="audio/mpeg">
+<source src="bleeding-heart-angra.mp3" type="audio/wav">   </audio>
+  </div>
+</body>
+</html>
